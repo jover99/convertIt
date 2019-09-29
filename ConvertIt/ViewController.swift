@@ -22,6 +22,9 @@ class ViewController: UIViewController {
                         "meters to feet",
                         "meters to yards"]
     
+    var fromUnits = ""
+    var toUnits = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         formulaPicker.delegate = self
@@ -38,16 +41,18 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return formulaArray.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return formulaArray[row]
     }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        fromUnitsLabel.text = formulaArray[row]
+        let unitsArray = formulaArray[row].components(separatedBy: " to ") //Why select this one vs. the other?
+        fromUnits = unitsArray[0]
+        toUnits = unitsArray[1]
+        fromUnitsLabel.text = fromUnits
+        resultsLabel.text = toUnits
     }
     
 }
