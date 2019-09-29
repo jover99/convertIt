@@ -140,6 +140,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decimalSegment" destination="u0a-Gn-FOq" id="m19-Q6-L83"/>
                         <outlet property="formulaPicker" destination="BFh-7x-5VB" id="FFh-26-YVh"/>
                         <outlet property="fromUnitsLabel" destination="bM3-Ji-3KD" id="gsj-QY-dYC"/>
                         <outlet property="resultsLabel" destination="iLP-Hm-D6S" id="Jux-jK-J1j"/>
